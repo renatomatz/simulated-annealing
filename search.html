@@ -10,7 +10,9 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="./favicon.png">
 
-    <title> simulated-annealing </title>
+    <title>
+Search Results &ndash; simulated-annealing
+</title>
 
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/pygments.css" rel="stylesheet">
@@ -110,169 +112,29 @@
 
     <div class="container">
     
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <p>A modern Fortran simulated annealing optimization method</p>
-        	 
-	<p> Find us on&hellip;</p>
-        <p>
-        	 
-          <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams/simulated-annealing" role="button">GitHub</a>
-			 
-			 
-			 
-			 
-	         
-			 
-        </p>
-      </div>
-
-      <div class="row" id='text'>
-		  
-        <div class="col-md-8">
-		  
-          <h1>simulated-annealing</h1>
-          <h3>Brief description</h3>
-<p>A modern Fortran simulated annealing optimization method. <strong><em>A work in progress.</em></strong></p>
-<h3>Building</h3>
-<p>A <a href="https://github.com/szaghi/FoBiS">FoBiS</a> configuration file (<code>simulated-annealing.fobis</code>) is also provided that can also build the library and examples. Use the <code>mode</code> flag to indicate what to build. For example:</p>
-<ul>
-<li>To build all the examples using gfortran: <code>FoBiS.py build -f simulated-annealing.fobis -mode tests-gnu</code></li>
-<li>To build all the examples using ifort: <code>FoBiS.py build -f simulated-annealing.fobis -mode tests-intel</code></li>
-<li>To build a static library using gfortran: <code>FoBiS.py build -f simulated-annealing.fobis -mode static-gnu</code></li>
-<li>To build a static library using ifort: <code>FoBiS.py build -f simulated-annealing.fobis -mode static-intel</code></li>
-</ul>
-<p>The full set of modes are: <code>static-gnu</code>, <code>static-gnu-debug</code>, <code>static-intel</code>, <code>static-intel-debug</code>, <code>shared-gnu</code>, <code>shared-gnu-debug</code>, <code>shared-intel</code>, <code>shared-intel-debug</code>, <code>tests-gnu</code>, <code>tests-gnu-debug</code>, <code>tests-intel</code>, <code>tests-intel-debug</code></p>
-<p>To generate the documentation using <a href="https://github.com/cmacmackin/ford">ford</a>, run: <code>FoBis.py rule --execute makedoc -f simulated-annealing.fobis</code></p>
-<h3>See also</h3>
-<ul>
-<li>https://www.netlib.org/opt/simann.f</li>
-</ul>
-<h3>References</h3>
-<ul>
-<li>Corana et al., "Minimizing multimodal functions of continuous variables
-    with the "simulated annealing" algorithm", september 1987
-    (vol. 13, no. 3, pp. 262-280),
-    acm transactions on mathematical software.</li>
-<li>Goffe, Ferrier and Rogers, "Global optimization of statistical functions
-    with simulated annealing", journal of econometrics, vol. 60, no. 1/2,
-    jan./feb. 1994, pp. 65-100.</li>
-</ul>
-        </div>
-		  
-        <div class="col-md-4">
-	  <div class="well">
-          <h2>Developer Info</h2>
-          <h4>Jacob Williams</h4>
-          
-          
-			   
-            <div class="text-center"><div class="btn-group" role="group">
-              
-              
-              
-              <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams"><i class="fa fa-github fa-lg"></i></a>
-				  
-				  
-              
-              
-              
-              
-            </div></div>
-            
-       </div>
-       </div>
-       
-      </div>
-      
-      
-      
-      
-		
       <div class="row">
-        <div class="col-xs-6 col-sm-3">
-              <h3>Source Files</h3>
-              <ul>
-                
-                  
-                    <li><a href='./sourcefile/simulated_annealing.f90.html'>simulated_annealing.f90</a></li>
-                  
-                
-              </ul>
-          </div>
-          
-		  <div class="col-xs-6 col-sm-3">
-              <h3>Modules</h3>
-              <ul>
-                
-                  
-                    <li><a href='./module/simulated_annealing_module.html'>simulated_annealing_module</a></li>
-                  
-                
-              </ul>
-          </div>
-          
-          
-		  <div class="col-xs-6 col-sm-3">
-              <h3>Procedures</h3>
-              <ul>
-                
-                  
-                    <li><a href='./proc/destroy_sa.html'>destroy_sa</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/exprep.html'>exprep</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/func.html'>func</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/initialize_sa.html'>initialize_sa</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/perturb_and_evaluate.html'>perturb_and_evaluate</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/print_vector.html'>print_vector</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/rand_init.html'>rand_init</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/sa.html'>sa</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/uniform.html'>uniform</a></li>
-                  
-                
-                  
-                    <li><a href='./proc/uniform_random_number.html'>uniform_random_number</a></li>
-                  
-                
-              </ul>
-          </div>
-          
-          
-		  <div class="col-xs-6 col-sm-3">
-              <h3>Derived Types</h3>
-              <ul>
-                
-                  
-                    <li><a href='./type/simulated_annealing_type.html'>simulated_annealing_type</a></li>
-                  
-                
-              </ul>
-          </div>
-          
+        <div class="col-lg-12">
+			 <h1>Search Results</h1>
+             <div id="tipue_search_content"><div id="tipue_search_loading"></div></div>
+        </div>
       </div>
+<!--
+    <script>
+      $(document).ready(function() {
+           $('#tipue_search_input').tipuesearch({
+             'mode' : 'static',
+             'show': 10,
+             'newWindow': false,
+             'descriptiveWords': 35,
+         });
+      });
+    </script>
+-->
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+});
+</script>
 
     <hr>    
     </div> <!-- /container -->
