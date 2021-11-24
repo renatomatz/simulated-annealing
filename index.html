@@ -72,8 +72,11 @@
                
             <li><a href="./lists/types.html">Derived Types</a></li>
         
+               
+        
         
             </ul>
+        
             </li>
 
 
@@ -91,6 +94,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="./lists/absint.html">Abstract Interfaces</a></li>
                              
 <li class="visible-xs hidden-sm visible-lg"><a href="./lists/types.html">Derived Types</a></li>
+
+
 
 
           </ul>
@@ -116,8 +121,9 @@
         	 
 	<p> Find us on&hellip;</p>
         <p>
-        	 
+			 
           <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams/simulated-annealing" role="button">GitHub</a>
+			 
 			 
 			 
 			 
@@ -137,21 +143,18 @@
 <h1>Status</h1>
 <p><img alt="Build Status" src="https://github.com/jacobwilliams/simulated-annealing/actions/workflows/CI.yml/badge.svg"></p>
 <h3>Building</h3>
-<p>A <a href="https://github.com/szaghi/FoBiS">FoBiS</a> configuration file (<code>simulated-annealing.fobis</code>) is also provided that can also build the library and examples. Use the <code>mode</code> flag to indicate what to build. For example:</p>
-<ul>
-<li>To build all the examples using gfortran: <code>FoBiS.py build -f simulated-annealing.fobis -mode tests-gnu</code></li>
-<li>To build all the examples using ifort: <code>FoBiS.py build -f simulated-annealing.fobis -mode tests-intel</code></li>
-<li>To build a static library using gfortran: <code>FoBiS.py build -f simulated-annealing.fobis -mode static-gnu</code></li>
-<li>To build a static library using ifort: <code>FoBiS.py build -f simulated-annealing.fobis -mode static-intel</code></li>
-</ul>
-<p>The full set of modes are: <code>static-gnu</code>, <code>static-gnu-debug</code>, <code>static-intel</code>, <code>static-intel-debug</code>, <code>shared-gnu</code>, <code>shared-gnu-debug</code>, <code>shared-intel</code>, <code>shared-intel-debug</code>, <code>tests-gnu</code>, <code>tests-gnu-debug</code>, <code>tests-intel</code>, <code>tests-intel-debug</code></p>
-<p>To generate the documentation using <a href="https://github.com/cmacmackin/ford">ford</a>, run: <code>FoBis.py rule --execute makedoc -f simulated-annealing.fobis</code></p>
+<p>A <a href="https://github.com/fortran-lang/fpm">Fortran Package Manager</a> manifest file is included, so that the library and tests cases can be compiled with FPM. For example:</p>
+<div class="codehilite"><pre><span></span><code>fpm build --profile release
+fpm test --profile release
+</code></pre></div>
+
+<p>To generate the documentation using <a href="https://github.com/Fortran-FOSS-Programmers/ford">ford</a>, run: <code>FoBis.py rule --execute makedoc -f simulated-annealing.fobis</code></p>
 <h3>See also</h3>
 <ul>
 <li>https://www.netlib.org/opt/simann.f</li>
 </ul>
 <h3>Documentation</h3>
-<p>The latest API documentation can be found <a href="http://jacobwilliams.github.io/simulated-annealing/">here</a>. This was generated from the source code using <a href="https://github.com/cmacmackin/ford">FORD</a>.</p>
+<p>The latest API documentation can be found <a href="http://jacobwilliams.github.io/simulated-annealing/">here</a>. This was generated from the source code using <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>.</p>
 <h3>References</h3>
 <ul>
 <li>Corana et al., "Minimizing multimodal functions of continuous variables
@@ -176,7 +179,8 @@
               
               
               <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams"><i class="fa fa-github fa-lg"></i></a>
-				  
+              
+              
 				  
               
               
@@ -192,107 +196,80 @@
       
       
       
+      
+      
 		
+        
       <div class="row">
+        
         <div class="col-xs-6 col-sm-3">
               <h3>Source Files</h3>
               <ul>
-                
-                  
                     <li><a href='./sourcefile/simulated_annealing.f90.html'>simulated_annealing.f90</a></li>
-                  
-                
-              </ul>
+                  </ul>
           </div>
+        
           
 		  <div class="col-xs-6 col-sm-3">
               <h3>Modules</h3>
               <ul>
-                
-                  
                     <li><a href='./module/simulated_annealing_module.html'>simulated_annealing_module</a></li>
-                  
-                
-              </ul>
+                  </ul>
           </div>
           
           
 		  <div class="col-xs-6 col-sm-3">
               <h3>Procedures</h3>
               <ul>
-                
-                  
                     <li><a href='./proc/destroy_sa.html'>destroy_sa</a></li>
-                  
-                
                   
                     <li><a href='./proc/exprep.html'>exprep</a></li>
                   
-                
-                  
                     <li><a href='./proc/func.html'>func</a></li>
-                  
-                
                   
                     <li><a href='./proc/initialize_sa.html'>initialize_sa</a></li>
                   
-                
-                  
                     <li><a href='./proc/perturb_and_evaluate.html'>perturb_and_evaluate</a></li>
-                  
-                
                   
                     <li><a href='./proc/print_vector.html'>print_vector</a></li>
                   
-                
-                  
                     <li><a href='./proc/rand_init.html'>rand_init</a></li>
-                  
-                
                   
                     <li><a href='./proc/sa.html'>sa</a></li>
                   
-                
-                  
                     <li><a href='./proc/uniform.html'>uniform</a></li>
                   
-                
-                  
                     <li><a href='./proc/uniform_random_number.html'>uniform_random_number</a></li>
-                  
-                
-              </ul>
+                  </ul>
           </div>
           
           
 		  <div class="col-xs-6 col-sm-3">
               <h3>Derived Types</h3>
               <ul>
-                
-                  
                     <li><a href='./type/simulated_annealing_type.html'>simulated_annealing_type</a></li>
-                  
-                
-              </ul>
+                  </ul>
           </div>
           
       </div>
+      
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
-                                          </p></div>
-        <div class="col-xs-6 col-md-4 col-md-push-4">
+        <div class="col-xs-6 col-md-6"><p>simulated-annealing was developed by Jacob Williams<br>&copy; 2021 
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
-            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            
             
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> simulated-annealing was developed by Jacob Williams</p></div>
       </div>
       <br>
       </div> <!-- /container -->    
