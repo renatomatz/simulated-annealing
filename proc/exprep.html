@@ -548,34 +548,34 @@ private pure function exprep(x) result(f)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">pure function </span><span class="n">exprep</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">pure function </span><span class="n">exprep</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">use</span><span class="p">,</span> <span class="k">intrinsic</span> <span class="kd">::</span> <span class="n">ieee_exceptions</span>
+<span class="w">    </span><span class="k">use</span><span class="p">,</span><span class="w"> </span><span class="k">intrinsic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ieee_exceptions</span><span class="w"></span>
 
-    <span class="k">implicit none</span>
+<span class="w">    </span><span class="k">implicit none</span>
 
-<span class="k">    </span><span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flags</span>
-    <span class="k">type</span><span class="p">(</span><span class="n">ieee_flag_type</span><span class="p">),</span><span class="k">parameter</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="kd">::</span> <span class="n">out_of_range</span> <span class="o">=</span> <span class="p">&amp;</span>
-                                                    <span class="p">[</span><span class="n">ieee_overflow</span><span class="p">,</span><span class="n">ieee_underflow</span><span class="p">]</span>
+<span class="k">    </span><span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flags</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">ieee_flag_type</span><span class="p">),</span><span class="k">parameter</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">out_of_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                                    </span><span class="p">[</span><span class="n">ieee_overflow</span><span class="p">,</span><span class="n">ieee_underflow</span><span class="p">]</span><span class="w"></span>
 
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">f</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">f</span><span class="w"></span>
 
-    <span class="k">call </span><span class="n">ieee_set_halting_mode</span><span class="p">(</span><span class="n">out_of_range</span><span class="p">,.</span><span class="n">false</span><span class="p">.)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ieee_set_halting_mode</span><span class="p">(</span><span class="n">out_of_range</span><span class="p">,.</span><span class="n">false</span><span class="p">.)</span><span class="w"></span>
 
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">call </span><span class="n">ieee_get_flag</span><span class="p">(</span><span class="n">out_of_range</span><span class="p">,</span><span class="n">flags</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">flags</span><span class="p">))</span> <span class="k">then</span>
-<span class="k">        call </span><span class="n">ieee_set_flag</span><span class="p">(</span><span class="n">out_of_range</span><span class="p">,.</span><span class="n">false</span><span class="p">.)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">then</span>
-<span class="k">            </span><span class="n">f</span> <span class="o">=</span> <span class="nb">huge</span><span class="p">(</span><span class="mf">1.0_dp</span><span class="p">)</span>
-        <span class="k">else</span>
-<span class="k">            </span><span class="n">f</span> <span class="o">=</span> <span class="mf">0.0_dp</span>
-        <span class="k">end if</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ieee_get_flag</span><span class="p">(</span><span class="n">out_of_range</span><span class="p">,</span><span class="n">flags</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">flags</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">ieee_set_flag</span><span class="p">(</span><span class="n">out_of_range</span><span class="p">,.</span><span class="n">false</span><span class="p">.)</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flags</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">huge</span><span class="p">(</span><span class="mf">1.0_dp</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_dp</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
 <span class="k">    end if</span>
 
-<span class="k">    end function </span><span class="n">exprep</span>
+<span class="k">    end function </span><span class="n">exprep</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -591,7 +591,7 @@ private pure function exprep(x) result(f)
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>simulated-annealing was developed by Jacob Williams<br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>simulated-annealing was developed by Jacob Williams<br>&copy; 2022 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

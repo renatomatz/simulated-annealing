@@ -542,95 +542,95 @@ maximum number of function evaluations is reached.</p>
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">perturb_and_evaluate</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">vm</span><span class="p">,</span><span class="n">xp</span><span class="p">,</span><span class="n">fp</span><span class="p">,</span><span class="n">nfcnev</span><span class="p">,</span><span class="n">ier</span><span class="p">,</span><span class="n">first</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">perturb_and_evaluate</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">vm</span><span class="p">,</span><span class="n">xp</span><span class="p">,</span><span class="n">fp</span><span class="p">,</span><span class="n">nfcnev</span><span class="p">,</span><span class="n">ier</span><span class="p">,</span><span class="n">first</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">implicit none</span>
+<span class="w">    </span><span class="k">implicit none</span>
 
-<span class="k">    class</span><span class="p">(</span><span class="n">simulated_annealing_type</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x</span>       <span class="c">!! input optimization variable vector to perturb</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">vm</span>      <span class="c">!! step length vector</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">xp</span>      <span class="c">!! the perturbed `x` value</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">fp</span>      <span class="c">!! the value of the user function at `xp`</span>
-    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">nfcnev</span>  <span class="c">!! total number of function evaluations</span>
-    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">ier</span>     <span class="c">!! status output code</span>
-    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>       <span class="kd">::</span> <span class="n">first</span>   <span class="c">!! to use the input `x` the first time</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">simulated_annealing_type</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">me</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w">       </span><span class="c">!! input optimization variable vector to perturb</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">vm</span><span class="w">      </span><span class="c">!! step length vector</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xp</span><span class="w">      </span><span class="c">!! the perturbed `x` value</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">fp</span><span class="w">      </span><span class="c">!! the value of the user function at `xp`</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">nfcnev</span><span class="w">  </span><span class="c">!! total number of function evaluations</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">ier</span><span class="w">     </span><span class="c">!! status output code</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">first</span><span class="w">   </span><span class="c">!! to use the input `x` the first time</span>
 
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>         <span class="c">!! counter</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">istat</span>     <span class="c">!! user function status code</span>
-    <span class="kt">logical</span> <span class="kd">::</span> <span class="n">first_try</span> <span class="c">!! local copy of `first`</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lower</span>    <span class="c">!! lower bound to use for random interval</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">upper</span>    <span class="c">!! upper bound to use for random interval</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w">         </span><span class="c">!! counter</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">istat</span><span class="w">     </span><span class="c">!! user function status code</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">first_try</span><span class="w"> </span><span class="c">!! local copy of `first`</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lower</span><span class="w">    </span><span class="c">!! lower bound to use for random interval</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">upper</span><span class="w">    </span><span class="c">!! upper bound to use for random interval</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">first</span><span class="p">))</span> <span class="k">then</span>
-<span class="k">        </span><span class="n">first_try</span> <span class="o">=</span> <span class="n">first</span>
-    <span class="k">else</span>
-<span class="k">        </span><span class="n">first_try</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
-    <span class="k">end if</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">first</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">first_try</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        </span><span class="n">first_try</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span>
 
 <span class="k">    do</span>
 
-<span class="k">        if</span> <span class="p">(</span><span class="n">first_try</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">            if</span> <span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">use_initial_guess</span><span class="p">)</span> <span class="k">then</span>
-                <span class="c">! use the initial guess</span>
-                <span class="c">! [note if this evauation fails, the subsequent ones</span>
-                <span class="c">!  are perturbed from this one]</span>
-                <span class="n">xp</span> <span class="o">=</span> <span class="n">x</span>
-                <span class="n">first_try</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
-            <span class="k">else</span>
-                <span class="c">! a random point in the bounds:</span>
-                <span class="c">! [if it fails, a new random one is tried next time]</span>
-                <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">me</span><span class="p">%</span><span class="n">n</span>
-                    <span class="n">xp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">me</span><span class="p">%</span><span class="n">ub</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-                    <span class="c">!xp(i) = me%lb(i) + (me%ub(i)-me%lb(i))*uniform_random_number()</span>
-                <span class="k">end do</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">first_try</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">use_initial_guess</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                </span><span class="c">! use the initial guess</span>
+<span class="w">                </span><span class="c">! [note if this evauation fails, the subsequent ones</span>
+<span class="w">                </span><span class="c">!  are perturbed from this one]</span>
+<span class="w">                </span><span class="n">xp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="w">                </span><span class="n">first_try</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span><span class="w"></span>
+<span class="w">                </span><span class="c">! a random point in the bounds:</span>
+<span class="w">                </span><span class="c">! [if it fails, a new random one is tried next time]</span>
+<span class="w">                </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="w"></span>
+<span class="w">                    </span><span class="n">xp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uniform</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">me</span><span class="p">%</span><span class="n">ub</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"></span>
+<span class="w">                    </span><span class="c">!xp(i) = me%lb(i) + (me%ub(i)-me%lb(i))*uniform_random_number()</span>
+<span class="w">                </span><span class="k">end do</span>
 <span class="k">            end if</span>
-<span class="k">        else</span>
-            <span class="c">! perturb all of them:</span>
-            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">me</span><span class="p">%</span><span class="n">n</span>
-                <span class="n">lower</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span> <span class="n">me</span><span class="p">%</span><span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">vm</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">)</span>
-                <span class="n">upper</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span> <span class="n">me</span><span class="p">%</span><span class="n">ub</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">vm</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">)</span>
-                <span class="n">xp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span><span class="n">upper</span><span class="p">)</span>
-                <span class="c">!xp(i) = lower + (upper-lower)*uniform_random_number()</span>
-            <span class="k">end do</span>
+<span class="k">        else</span><span class="w"></span>
+<span class="w">            </span><span class="c">! perturb all of them:</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="w"></span>
+<span class="w">                </span><span class="n">lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">lb</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vm</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">ub</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vm</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="n">xp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uniform</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span><span class="n">upper</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="c">!xp(i) = lower + (upper-lower)*uniform_random_number()</span>
+<span class="w">            </span><span class="k">end do</span>
+<span class="k">        end if</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">! evaluate the function with the trial</span>
+<span class="w">        </span><span class="c">! point xp and return as fp.</span>
+<span class="w">        </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">fcn</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="n">istat</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">! function eval counter:</span>
+<span class="w">        </span><span class="n">nfcnev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nfcnev</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!  if too many function evaluations occur, terminate the algorithm.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nfcnev</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">maxevl</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iprint</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39; too many function evaluations; consider&#39;</span><span class="w"></span>
+<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39; increasing maxevl or eps, or decreasing&#39;</span><span class="w"></span>
+<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39; nt or rt. these results are likely to be&#39;</span><span class="w"></span>
+<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39; poor.&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">            </span><span class="n">ier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span>
 <span class="k">        end if</span>
 
-        <span class="c">! evaluate the function with the trial</span>
-        <span class="c">! point xp and return as fp.</span>
-        <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">fcn</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">istat</span><span class="p">)</span>
+<span class="k">        select case</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="c">! user stop</span>
+<span class="w">            </span><span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39; user stopped in function.&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="n">ier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">            </span><span class="k">exit</span>
+<span class="k">        case</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="c">! try another one until we get a valid evaluation</span>
+<span class="w">            </span><span class="k">cycle</span>
+<span class="k">        case </span><span class="n">default</span><span class="w"></span>
+<span class="w">            </span><span class="c">! continue</span>
+<span class="w">        </span><span class="k">end select</span>
 
-        <span class="c">! function eval counter:</span>
-        <span class="n">nfcnev</span> <span class="o">=</span> <span class="n">nfcnev</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">        exit</span><span class="w"> </span><span class="c">! finished</span>
 
-        <span class="c">!  if too many function evaluations occur, terminate the algorithm.</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">nfcnev</span> <span class="o">&gt;</span> <span class="n">me</span><span class="p">%</span><span class="n">maxevl</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">            if</span> <span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iprint</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">                write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span> <span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39; too many function evaluations; consider&#39;</span>
-                <span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span> <span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39; increasing maxevl or eps, or decreasing&#39;</span>
-                <span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span> <span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39; nt or rt. these results are likely to be&#39;</span>
-                <span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span> <span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39; poor.&#39;</span>
-            <span class="k">end if</span>
-<span class="k">            </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="k">return</span>
-<span class="k">        end if</span>
+<span class="w">    </span><span class="k">end do</span>
 
-<span class="k">        select case</span> <span class="p">(</span><span class="n">istat</span><span class="p">)</span>
-        <span class="k">case</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-            <span class="c">! user stop</span>
-            <span class="k">write</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iunit</span><span class="p">,</span> <span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39; user stopped in function.&#39;</span>
-            <span class="n">ier</span> <span class="o">=</span> <span class="mi">4</span>
-            <span class="k">exit</span>
-<span class="k">        case</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="c">! try another one until we get a valid evaluation</span>
-            <span class="k">cycle</span>
-<span class="k">        case </span><span class="n">default</span>
-            <span class="c">! continue</span>
-        <span class="k">end select</span>
-
-<span class="k">        exit</span> <span class="c">! finished</span>
-
-    <span class="k">end do</span>
-
-<span class="k">    end subroutine </span><span class="n">perturb_and_evaluate</span>
+<span class="k">    end subroutine </span><span class="n">perturb_and_evaluate</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -646,7 +646,7 @@ maximum number of function evaluations is reached.</p>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>simulated-annealing was developed by Jacob Williams<br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>simulated-annealing was developed by Jacob Williams<br>&copy; 2022 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
