@@ -4,24 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="A modern Fortran simulated annealing optimization method">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
-    <title>
-All Procedures &ndash; simulated-annealing
+    <title>All Procedures &ndash; simulated-annealing
 </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -50,58 +44,27 @@ All Procedures &ndash; simulated-annealing
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/simulated_annealing.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-        
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/simulated_annealing.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -110,46 +73,33 @@ All Procedures &ndash; simulated-annealing
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
       <div class="row">
         <div class="col-lg-12" id='text'>
 			 <h1>Procedures</h1>
 			 <table class="table table-striped">
 			 <thead><tr><th>Procedure</th><th>Location</th><th>Procedure Type</th><th>Description</th></tr></thead>
 			 <tbody>
-			 
 			   <tr><td><a href='../proc/destroy_sa.html'>destroy_sa</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Subroutine</td><td><p>Destructor.</p></td></tr>
-			 
 			   <tr><td><a href='../proc/exprep.html'>exprep</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Function</td><td><p>this function replaces <code>exp()</code> to avoid underflow and overflow.</p><a href="../proc/exprep.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			   <tr><td><a href='../proc/func.html'>func</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Function</td><td><p>if the function is to be minimized, switch the sign of the function.
 note that all intermediate and final output switches the sign back
 to eliminate any possible confusion for the user.</p></td></tr>
-			 
 			   <tr><td><a href='../proc/initialize_sa.html'>initialize_sa</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Subroutine</td><td><p>Initialize the class.</p><a href="../proc/initialize_sa.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			   <tr><td><a href='../proc/perturb_and_evaluate.html'>perturb_and_evaluate</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Subroutine</td><td><p>Perturb the <code>x</code> vector and evaluate the function.</p><a href="../proc/perturb_and_evaluate.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			   <tr><td><a href='../proc/print_vector.html'>print_vector</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Subroutine</td><td><p>this subroutine prints the double precision vector named vector.
 elements 1 thru ncols will be printed. name is a character variable
 that describes vector. note that if name is given in the call to
 print_vector, it must be enclosed in quotes. if there are more than 10
 elements in vector, 10 elements will be printed on each line.</p></td></tr>
-			 
 			   <tr><td><a href='../proc/rand_init.html'>rand_init</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Subroutine</td><td><p>Initialize the intrinsic random number generator.</p><a href="../proc/rand_init.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			   <tr><td><a href='../proc/sa.html'>sa</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Subroutine</td><td><p>Continuous simulated annealing global optimization algorithm</p><a href="../proc/sa.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			   <tr><td><a href='../proc/uniform.html'>uniform</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Function</td><td><p>Uniform random number on the interval <code>[xl,xu]</code>.</p></td></tr>
-			 
 			   <tr><td><a href='../proc/uniform_random_number.html'>uniform_random_number</a></td><td><a href='../module/simulated_annealing_module.html'>simulated_annealing_module</a></td><td>Function</td><td><p>Get a new uniform random number from [0,1].</p><a href="../proc/uniform_random_number.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			 </tbody></table>
              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -157,17 +107,17 @@ elements in vector, 10 elements will be printed on each line.</p></td></tr>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: call~~graph~~CallGraph Pages: 1 -->
-<svg id="callgraphCallGraph" width="414pt" height="200pt"
- viewBox="0.00 0.00 414.00 200.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="call~~graph~~CallGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 196)">
+<svg id="callgraphCallGraph" width="414pt" height="158pt"
+ viewBox="0.00 0.00 414.00 158.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="call~~graph~~CallGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 154)">
 <title>call~~graph~~CallGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-196 410,-196 410,4 -4,4"/>
-<!-- proc~initialize_sa -->
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-154 410,-154 410,4 -4,4"/>
+<!-- proc~rand_init -->
 <g id="call~~graph~~CallGraph_node1" class="node">
-<title>proc~initialize_sa</title>
-<g id="a_call~~graph~~CallGraph_node1"><a xlink:href=".././proc/initialize_sa.html" xlink:title="initialize_sa">
-<polygon fill="#d9534f" stroke="#d9534f" points="102,-24 28,-24 28,0 102,0 102,-24"/>
-<text text-anchor="middle" x="65" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_sa</text>
+<title>proc~rand_init</title>
+<g id="a_call~~graph~~CallGraph_node1"><a xlink:href=".././proc/rand_init.html" xlink:title="rand_init">
+<polygon fill="#d9534f" stroke="#d9534f" points="361,-150 302,-150 302,-126 361,-126 361,-150"/>
+<text text-anchor="middle" x="331.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rand_init</text>
 </a>
 </g>
 </g>
@@ -175,17 +125,26 @@ elements in vector, 10 elements will be printed on each line.</p></td></tr>
 <g id="call~~graph~~CallGraph_node2" class="node">
 <title>proc~exprep</title>
 <g id="a_call~~graph~~CallGraph_node2"><a xlink:href=".././proc/exprep.html" xlink:title="exprep">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="358.5,-192 304.5,-192 304.5,-168 358.5,-168 358.5,-192"/>
-<text text-anchor="middle" x="331.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exprep</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="358.5,-108 304.5,-108 304.5,-84 358.5,-84 358.5,-108"/>
+<text text-anchor="middle" x="331.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exprep</text>
+</a>
+</g>
+</g>
+<!-- proc~func -->
+<g id="call~~graph~~CallGraph_node3" class="node">
+<title>proc~func</title>
+<g id="a_call~~graph~~CallGraph_node3"><a xlink:href=".././proc/func.html" xlink:title="func">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="92,-66 38,-66 38,-42 92,-42 92,-66"/>
+<text text-anchor="middle" x="65" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">func</text>
 </a>
 </g>
 </g>
 <!-- proc~uniform -->
-<g id="call~~graph~~CallGraph_node3" class="node">
+<g id="call~~graph~~CallGraph_node4" class="node">
 <title>proc~uniform</title>
-<g id="a_call~~graph~~CallGraph_node3"><a xlink:href=".././proc/uniform.html" xlink:title="uniform">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="221,-66 166,-66 166,-42 221,-42 221,-66"/>
-<text text-anchor="middle" x="193.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uniform</text>
+<g id="a_call~~graph~~CallGraph_node4"><a xlink:href=".././proc/uniform.html" xlink:title="uniform">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="221,-24 166,-24 166,0 221,0 221,-24"/>
+<text text-anchor="middle" x="193.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uniform</text>
 </a>
 </g>
 </g>
@@ -193,98 +152,89 @@ elements in vector, 10 elements will be printed on each line.</p></td></tr>
 <g id="call~~graph~~CallGraph_node9" class="node">
 <title>proc~uniform_random_number</title>
 <g id="a_call~~graph~~CallGraph_node9"><a xlink:href=".././proc/uniform_random_number.html" xlink:title="uniform_random_number">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="406,-66 257,-66 257,-42 406,-42 406,-66"/>
-<text text-anchor="middle" x="331.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uniform_random_number</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="406,-24 257,-24 257,0 406,0 406,-24"/>
+<text text-anchor="middle" x="331.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">uniform_random_number</text>
 </a>
 </g>
 </g>
 <!-- proc~uniform&#45;&gt;proc~uniform_random_number -->
 <g id="call~~graph~~CallGraph_edge1" class="edge">
 <title>proc~uniform&#45;&gt;proc~uniform_random_number</title>
-<path fill="none" stroke="#000000" d="M221.05,-54C228.71,-54 237.51,-54 246.72,-54"/>
-<polygon fill="#000000" stroke="#000000" points="246.84,-57.5 256.84,-54 246.84,-50.5 246.84,-57.5"/>
+<path fill="none" stroke="#000000" d="M221.05,-12C228.71,-12 237.51,-12 246.72,-12"/>
+<polygon fill="#000000" stroke="#000000" points="246.84,-15.5 256.84,-12 246.84,-8.5 246.84,-15.5"/>
+</g>
+<!-- proc~print_vector -->
+<g id="call~~graph~~CallGraph_node5" class="node">
+<title>proc~print_vector</title>
+<g id="a_call~~graph~~CallGraph_node5"><a xlink:href=".././proc/print_vector.html" xlink:title="print_vector">
+<polygon fill="#d9534f" stroke="#d9534f" points="369.5,-66 293.5,-66 293.5,-42 369.5,-42 369.5,-66"/>
+<text text-anchor="middle" x="331.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">print_vector</text>
+</a>
+</g>
+</g>
+<!-- proc~destroy_sa -->
+<g id="call~~graph~~CallGraph_node6" class="node">
+<title>proc~destroy_sa</title>
+<g id="a_call~~graph~~CallGraph_node6"><a xlink:href=".././proc/destroy_sa.html" xlink:title="destroy_sa">
+<polygon fill="#d9534f" stroke="#d9534f" points="99.5,-108 30.5,-108 30.5,-84 99.5,-84 99.5,-108"/>
+<text text-anchor="middle" x="65" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">destroy_sa</text>
+</a>
+</g>
 </g>
 <!-- proc~perturb_and_evaluate -->
-<g id="call~~graph~~CallGraph_node4" class="node">
+<g id="call~~graph~~CallGraph_node7" class="node">
 <title>proc~perturb_and_evaluate</title>
-<g id="a_call~~graph~~CallGraph_node4"><a xlink:href=".././proc/perturb_and_evaluate.html" xlink:title="perturb_and_evaluate">
-<polygon fill="#d9534f" stroke="#d9534f" points="130,-66 0,-66 0,-42 130,-42 130,-66"/>
-<text text-anchor="middle" x="65" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">perturb_and_evaluate</text>
+<g id="a_call~~graph~~CallGraph_node7"><a xlink:href=".././proc/perturb_and_evaluate.html" xlink:title="perturb_and_evaluate">
+<polygon fill="#d9534f" stroke="#d9534f" points="130,-24 0,-24 0,0 130,0 130,-24"/>
+<text text-anchor="middle" x="65" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">perturb_and_evaluate</text>
 </a>
 </g>
 </g>
 <!-- proc~perturb_and_evaluate&#45;&gt;proc~uniform -->
 <g id="call~~graph~~CallGraph_edge2" class="edge">
 <title>proc~perturb_and_evaluate&#45;&gt;proc~uniform</title>
-<path fill="none" stroke="#000000" d="M130.36,-54C139.1,-54 147.82,-54 155.84,-54"/>
-<polygon fill="#000000" stroke="#000000" points="155.92,-57.5 165.92,-54 155.92,-50.5 155.92,-57.5"/>
-</g>
-<!-- proc~destroy_sa -->
-<g id="call~~graph~~CallGraph_node5" class="node">
-<title>proc~destroy_sa</title>
-<g id="a_call~~graph~~CallGraph_node5"><a xlink:href=".././proc/destroy_sa.html" xlink:title="destroy_sa">
-<polygon fill="#d9534f" stroke="#d9534f" points="99.5,-108 30.5,-108 30.5,-84 99.5,-84 99.5,-108"/>
-<text text-anchor="middle" x="65" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">destroy_sa</text>
-</a>
-</g>
-</g>
-<!-- proc~print_vector -->
-<g id="call~~graph~~CallGraph_node6" class="node">
-<title>proc~print_vector</title>
-<g id="a_call~~graph~~CallGraph_node6"><a xlink:href=".././proc/print_vector.html" xlink:title="print_vector">
-<polygon fill="#d9534f" stroke="#d9534f" points="369.5,-150 293.5,-150 293.5,-126 369.5,-126 369.5,-150"/>
-<text text-anchor="middle" x="331.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">print_vector</text>
-</a>
-</g>
-</g>
-<!-- proc~rand_init -->
-<g id="call~~graph~~CallGraph_node7" class="node">
-<title>proc~rand_init</title>
-<g id="a_call~~graph~~CallGraph_node7"><a xlink:href=".././proc/rand_init.html" xlink:title="rand_init">
-<polygon fill="#d9534f" stroke="#d9534f" points="361,-108 302,-108 302,-84 361,-84 361,-108"/>
-<text text-anchor="middle" x="331.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rand_init</text>
-</a>
-</g>
+<path fill="none" stroke="#000000" d="M130.36,-12C139.1,-12 147.82,-12 155.84,-12"/>
+<polygon fill="#000000" stroke="#000000" points="155.92,-15.5 165.92,-12 155.92,-8.5 155.92,-15.5"/>
 </g>
 <!-- proc~sa -->
 <g id="call~~graph~~CallGraph_node8" class="node">
 <title>proc~sa</title>
 <g id="a_call~~graph~~CallGraph_node8"><a xlink:href=".././proc/sa.html" xlink:title="sa">
-<polygon fill="#d9534f" stroke="#d9534f" points="220.5,-129 166.5,-129 166.5,-105 220.5,-105 220.5,-129"/>
-<text text-anchor="middle" x="193.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sa</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="220.5,-87 166.5,-87 166.5,-63 220.5,-63 220.5,-87"/>
+<text text-anchor="middle" x="193.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sa</text>
 </a>
 </g>
 </g>
-<!-- proc~sa&#45;&gt;proc~exprep -->
+<!-- proc~sa&#45;&gt;proc~rand_init -->
 <g id="call~~graph~~CallGraph_edge3" class="edge">
+<title>proc~sa&#45;&gt;proc~rand_init</title>
+<path fill="none" stroke="#000000" d="M209.61,-87.14C221.8,-96.43 239.69,-108.96 257,-117 267.98,-122.1 280.48,-126.24 292.01,-129.44"/>
+<polygon fill="#000000" stroke="#000000" points="291.27,-132.87 301.83,-132.02 293.05,-126.1 291.27,-132.87"/>
+</g>
+<!-- proc~sa&#45;&gt;proc~exprep -->
+<g id="call~~graph~~CallGraph_edge6" class="edge">
 <title>proc~sa&#45;&gt;proc~exprep</title>
-<path fill="none" stroke="#000000" d="M209.61,-129.14C221.8,-138.43 239.69,-150.96 257,-159 268.75,-164.46 282.23,-168.81 294.42,-172.1"/>
-<polygon fill="#000000" stroke="#000000" points="293.72,-175.54 304.28,-174.62 295.45,-168.76 293.72,-175.54"/>
+<path fill="none" stroke="#000000" d="M220.72,-79.05C241.61,-82.27 271.07,-86.82 294.22,-90.4"/>
+<polygon fill="#000000" stroke="#000000" points="293.94,-93.9 304.36,-91.96 295.01,-86.98 293.94,-93.9"/>
 </g>
 <!-- proc~sa&#45;&gt;proc~print_vector -->
 <g id="call~~graph~~CallGraph_edge5" class="edge">
 <title>proc~sa&#45;&gt;proc~print_vector</title>
-<path fill="none" stroke="#000000" d="M220.72,-121.05C238.43,-123.78 262.32,-127.47 283.28,-130.71"/>
-<polygon fill="#000000" stroke="#000000" points="282.89,-134.19 293.3,-132.26 283.95,-127.27 282.89,-134.19"/>
-</g>
-<!-- proc~sa&#45;&gt;proc~rand_init -->
-<g id="call~~graph~~CallGraph_edge4" class="edge">
-<title>proc~sa&#45;&gt;proc~rand_init</title>
-<path fill="none" stroke="#000000" d="M220.72,-112.95C240.8,-109.85 268.82,-105.52 291.52,-102.02"/>
-<polygon fill="#000000" stroke="#000000" points="292.18,-105.46 301.53,-100.47 291.12,-98.54 292.18,-105.46"/>
+<path fill="none" stroke="#000000" d="M220.72,-70.95C238.43,-68.22 262.32,-64.53 283.28,-61.29"/>
+<polygon fill="#000000" stroke="#000000" points="283.95,-64.73 293.3,-59.74 282.89,-57.81 283.95,-64.73"/>
 </g>
 <!-- proc~sa&#45;&gt;proc~uniform_random_number -->
-<g id="call~~graph~~CallGraph_edge6" class="edge">
+<g id="call~~graph~~CallGraph_edge4" class="edge">
 <title>proc~sa&#45;&gt;proc~uniform_random_number</title>
-<path fill="none" stroke="#000000" d="M209.61,-104.86C221.8,-95.57 239.69,-83.04 257,-75 261.36,-72.97 265.96,-71.1 270.64,-69.38"/>
-<polygon fill="#000000" stroke="#000000" points="271.99,-72.61 280.31,-66.05 269.71,-65.99 271.99,-72.61"/>
+<path fill="none" stroke="#000000" d="M209.61,-62.86C221.8,-53.57 239.69,-41.04 257,-33 261.36,-30.97 265.96,-29.1 270.64,-27.38"/>
+<polygon fill="#000000" stroke="#000000" points="271.99,-30.61 280.31,-24.05 269.71,-23.99 271.99,-30.61"/>
 </g>
-<!-- proc~func -->
+<!-- proc~initialize_sa -->
 <g id="call~~graph~~CallGraph_node10" class="node">
-<title>proc~func</title>
-<g id="a_call~~graph~~CallGraph_node10"><a xlink:href=".././proc/func.html" xlink:title="func">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="92,-150 38,-150 38,-126 92,-126 92,-150"/>
-<text text-anchor="middle" x="65" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">func</text>
+<title>proc~initialize_sa</title>
+<g id="a_call~~graph~~CallGraph_node10"><a xlink:href=".././proc/initialize_sa.html" xlink:title="initialize_sa">
+<polygon fill="#d9534f" stroke="#d9534f" points="102,-150 28,-150 28,-126 102,-126 102,-150"/>
+<text text-anchor="middle" x="65" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_sa</text>
 </a>
 </g>
 </g>
@@ -351,21 +301,18 @@ elements in vector, 10 elements will be printed on each line.</p></td></tr>
     </div></div></div></div>
         </div>
       </div>
-
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
         <div class="col-xs-6 col-md-6"><p>simulated-annealing was developed by Jacob Williams<br>&copy; 2022 
-                                          </p>
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -393,14 +340,11 @@ elements in vector, 10 elements will be printed on each line.</p></td></tr>
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>
